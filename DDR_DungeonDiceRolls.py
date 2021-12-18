@@ -33,7 +33,7 @@ def rolldice():
     try:
         dc = int(input("Dice quantities:\n"))
         fc = int(input("Dice(s) faces:\n"))
-    except (ValueError) as errb:
+    except ValueError as errb:
         print(f"Error in Roll section: {errb}")
         rolldice()
     roll = Dice(fc, dc)
@@ -77,6 +77,7 @@ def rolldice():
                     print("Only need to write 'ds+1, 2, 3, 5, 6'. \nTry again\n")
                     return rolldicept2()
             elif decision == "n":
+                temp.clear()                
                 return menu()
             else:
                 return rolldicept2()
@@ -92,7 +93,7 @@ def menu():
     print('Dungeon Dice Rolls made with Python!\n(1) Roll dices\n(2) Dices storage\n(3) Quit aplication')
     try:
         opt = int(input('Tip an option below: '))
-    except (ValueError) as erra:
+    except ValueError as erra:
         print(f"Error in Menu Section: {erra}\n")
         menu()
     if opt == 1:
